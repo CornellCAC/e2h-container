@@ -24,6 +24,7 @@ RUN apt-get update -y && apt-get install -y \
 RUN useradd -mr -G sudo dev 
 RUN passwd -d dev
 RUN echo "dev  ALL=(ALL)       NOPASSWD: ALL"  >> /etc/sudoers
+RUN chown -R dev /home/dev
 
 WORKDIR /home/dev
 
